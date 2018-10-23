@@ -9,8 +9,8 @@ namespace CourierPro
 {
     public class Vehicle
     {
-        public enum vehicleType { car, cycle, moped, motorcycle, van, truck, forklift }
-
+        public enum vehicleType { none, car, cycle, moped, motorcycle, van, truck, forklift }
+        public enum vehicleCategory { none, class1, class3, class5, class6}
         //string _rego;
         //DateTime _dateOfPurchase;
         //DateTime _regoDue;

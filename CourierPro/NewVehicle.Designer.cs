@@ -33,18 +33,18 @@
             this.lblrego = new System.Windows.Forms.Label();
             this.lbltype = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtLicense = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPurchase = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.vehiclePurchaseCal = new System.Windows.Forms.MonthCalendar();
+            this.cbVechileCategory = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cbVehicleType
             // 
             this.cbVehicleType.FormattingEnabled = true;
             this.cbVehicleType.Location = new System.Drawing.Point(103, 39);
-            this.cbVehicleType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbVehicleType.Margin = new System.Windows.Forms.Padding(2);
             this.cbVehicleType.Name = "cbVehicleType";
             this.cbVehicleType.Size = new System.Drawing.Size(104, 21);
             this.cbVehicleType.TabIndex = 0;
@@ -52,7 +52,7 @@
             // txtRego
             // 
             this.txtRego.Location = new System.Drawing.Point(103, 86);
-            this.txtRego.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRego.Margin = new System.Windows.Forms.Padding(2);
             this.txtRego.Name = "txtRego";
             this.txtRego.Size = new System.Drawing.Size(104, 20);
             this.txtRego.TabIndex = 1;
@@ -83,17 +83,9 @@
             this.label1.Location = new System.Drawing.Point(9, 130);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "License class";
-            // 
-            // txtLicense
-            // 
-            this.txtLicense.Location = new System.Drawing.Point(103, 128);
-            this.txtLicense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtLicense.Name = "txtLicense";
-            this.txtLicense.Size = new System.Drawing.Size(104, 20);
-            this.txtLicense.TabIndex = 4;
+            this.label1.Text = "Vehicle Category";
             // 
             // label2
             // 
@@ -108,7 +100,7 @@
             // txtPurchase
             // 
             this.txtPurchase.Location = new System.Drawing.Point(103, 171);
-            this.txtPurchase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPurchase.Margin = new System.Windows.Forms.Padding(2);
             this.txtPurchase.Name = "txtPurchase";
             this.txtPurchase.Size = new System.Drawing.Size(104, 20);
             this.txtPurchase.TabIndex = 6;
@@ -132,22 +124,31 @@
             this.vehiclePurchaseCal.Visible = false;
             this.vehiclePurchaseCal.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.vehiclePurchaseCal_DateSelected);
             // 
+            // cbVechileCategory
+            // 
+            this.cbVechileCategory.FormattingEnabled = true;
+            this.cbVechileCategory.Location = new System.Drawing.Point(103, 122);
+            this.cbVechileCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.cbVechileCategory.Name = "cbVechileCategory";
+            this.cbVechileCategory.Size = new System.Drawing.Size(104, 21);
+            this.cbVechileCategory.TabIndex = 10;
+            // 
             // NewVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.cbVechileCategory);
             this.Controls.Add(this.vehiclePurchaseCal);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPurchase);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtLicense);
             this.Controls.Add(this.lbltype);
             this.Controls.Add(this.lblrego);
             this.Controls.Add(this.txtRego);
             this.Controls.Add(this.cbVehicleType);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NewVehicle";
             this.Text = "NewVehicle";
             this.ResumeLayout(false);
@@ -162,10 +163,10 @@
         private System.Windows.Forms.Label lblrego;
         private System.Windows.Forms.Label lbltype;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtLicense;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPurchase;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MonthCalendar vehiclePurchaseCal;
+        private System.Windows.Forms.ComboBox cbVechileCategory;
     }
 }
