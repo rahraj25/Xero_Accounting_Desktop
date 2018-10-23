@@ -26,7 +26,7 @@ namespace CourierPro.Data
                 {
                     foreach (Driver courier in couriers)
                     {
-                        if (courier.car != null && courier.license == car.licence)
+                        if (courier.car != null && courier.license == Enum.GetNames(typeof(Vehicle.vehicleCategory)).ToString())
                         {
                             car.SetDriver(courier);
                             courier.car = car;

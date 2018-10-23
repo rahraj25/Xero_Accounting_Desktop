@@ -24,7 +24,7 @@ namespace CourierPro
         {
 
             var _dummylist = new List<Vehicle>();
-            _dummylist.Add(new Vehicle() { licence = "ddas3eqw", vtype = Vehicle.vehicleType.car, mileage = 102001 });
+            _dummylist.Add(new Vehicle() {rego = "CFR101", type = Vehicle.vehicleType.car, category = Vehicle.vehicleCategory.class1});
 
             dgVehicles.DataSource = _dummylist;
         }
