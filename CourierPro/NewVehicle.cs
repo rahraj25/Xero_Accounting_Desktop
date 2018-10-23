@@ -20,11 +20,7 @@ namespace CourierPro
 
         void BindVehicle()
         {
-
-           cbVehicleType.DataSource = Enum.GetNames(typeof(Vehicle.vehicleType)).ToList();
-           
-
-
+            cbVehicleType.DataSource = Enum.GetNames(typeof(Vehicle.vehicleType)).ToList();
         }
 
     }
