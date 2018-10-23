@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CourierPro
+namespace CourierPro.Data
 {
-    class Driver : Person
+    class Driver : Persons
     {
         public enum LicenceType {Restricted, Car, Medium, Heavy, Motorcycle, Forklift};
         LicenceType[] licences { get; set; }

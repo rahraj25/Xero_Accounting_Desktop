@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CourierPro.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +16,17 @@ namespace CourierPro
         public vehicles()
         {
             InitializeComponent();
+
         }
 
+
+        void DataDisplay() {
+
+            var _dummylist = new List<Vehicles>();
+            _dummylist.Add(new Vehicles() {VehicleId=1,VehicleName="Random",VehicleType="SUV" });
+
+            dgVehicles.DataSource=
+        }
 
         private void UpdateVehicle(Vehicle vehicle)
         {

@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dgAccounts = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAccounts)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dgAccounts
+            // 
+            this.dgAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAccounts.Location = new System.Drawing.Point(60, 41);
+            this.dgAccounts.Name = "dgAccounts";
+            this.dgAccounts.RowTemplate.Height = 28;
+            this.dgAccounts.Size = new System.Drawing.Size(1171, 409);
+            this.dgAccounts.TabIndex = 0;
+            // 
+            // Accounts
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1300, 598);
+            this.Controls.Add(this.dgAccounts);
+            this.Name = "Accounts";
             this.Text = "Accounts";
+            ((System.ComponentModel.ISupportInitialize)(this.dgAccounts)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgAccounts;
     }
 }
