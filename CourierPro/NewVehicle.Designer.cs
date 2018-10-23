@@ -122,6 +122,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // vehiclePurchaseCal
             // 
@@ -149,7 +150,6 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NewVehicle";
             this.Text = "NewVehicle";
-            this.Click += new System.EventHandler(this.NewVehicle_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

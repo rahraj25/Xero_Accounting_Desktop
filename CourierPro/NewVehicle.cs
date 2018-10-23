@@ -27,11 +27,6 @@ namespace CourierPro
 
         }
 
-        private void NewVehicle_Click(object sender, EventArgs e)
-        {
-         
-        }
-
         private void txtPurchase_Click(object sender, EventArgs e)
         {
             vehiclePurchaseCal.Visible = true;
@@ -40,6 +35,15 @@ namespace CourierPro
         private void vehiclePurchaseCal_DateSelected(object sender, DateRangeEventArgs e)
         {
             txtPurchase.Text = vehiclePurchaseCal.SelectionStart.ToString("dd-MM-yyyy");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtPurchase.Text) || string.IsNullOrEmpty(txtLicense.Text) || string.IsNullOrEmpty(txtRego.Text))
+            {
+                MessageBox.Show("All fields should be filled");
+            }
+
         }
     }
 }
