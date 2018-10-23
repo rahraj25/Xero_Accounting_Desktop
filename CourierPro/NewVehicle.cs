@@ -23,5 +23,19 @@ namespace CourierPro
             cbVehicleType.DataSource = Enum.GetNames(typeof(Vehicle.vehicleType)).ToList();
         }
 
+        private void NewVehicle_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void txtPurchase_Click(object sender, EventArgs e)
+        {
+            vehiclePurchaseCal.Visible = true;
+        }
+
+        private void vehiclePurchaseCal_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            txtPurchase.Text = vehiclePurchaseCal.SelectionStart.ToString("dd-MM-yyyy");
+        }
     }
 }
