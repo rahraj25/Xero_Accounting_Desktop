@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CourierPro
 {
-    class Vehicle
+    public class Vehicle
     {
         public enum vehicleType { car, cycle, moped, motorcycle, van, truck, forklift }
 

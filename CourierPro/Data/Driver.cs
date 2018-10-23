@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CourierPro.Data
 {
-    class Driver : Persons
+    public class Driver : Persons
     {
         public enum LicenceType {Restricted, Car, Medium, Heavy, Motorcycle, Forklift};
         LicenceType[] licences { get; set; }
