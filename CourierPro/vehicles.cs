@@ -16,16 +16,17 @@ namespace CourierPro
         public vehicles()
         {
             InitializeComponent();
-
+            DataDisplay();
         }
 
 
-        void DataDisplay() {
+        void DataDisplay()
+        {
 
-            var _dummylist = new List<Vehicles>();
-            _dummylist.Add(new Vehicles() {VehicleId=1,VehicleName="Random",VehicleType="SUV" });
+            var _dummylist = new List<Vehicle>();
+            _dummylist.Add(new Vehicle() { licence = "ddas3eqw", vtype = Vehicle.vehicleType.car, mileage = 102001 });
 
-            dgVehicles.DataSource=
+            dgVehicles.DataSource = _dummylist;
         }
 
         private void UpdateVehicle(Vehicle vehicle)
