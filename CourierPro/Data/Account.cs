@@ -11,5 +11,6 @@ namespace CourierPro.Data
         public int AccountNo { get; set; }
         public string AccountType { get; set;}
         public Persons Person { get; set; }
+        public string Location { get; set; }
     }
 }

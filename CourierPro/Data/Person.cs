@@ -9,8 +9,10 @@ namespace CourierPro.Data
     public class Persons
     {
         public int PersonID { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int DriverID { get; set; }
+        public int AccountID { get; set; }
         public string Email { get; set; }
     }
 }

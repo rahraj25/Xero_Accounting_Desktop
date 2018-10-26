@@ -67,6 +67,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="New Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Account.Designer.cs">
+      <DependentUpon>New Account.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Track Package.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Track Package.Designer.cs">
+      <DependentUpon>Track Package.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tracking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +106,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="New Account.resx">
+      <DependentUpon>New Account.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewVehicle.resx">
       <DependentUpon>NewVehicle.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +122,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Track Package.resx">
+      <DependentUpon>Track Package.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tracking.resx">
+      <DependentUpon>Tracking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vehicles.resx">
       <DependentUpon>vehicles.cs</DependentUpon>
     </EmbeddedResource>
