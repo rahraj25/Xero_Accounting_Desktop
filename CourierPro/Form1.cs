@@ -51,7 +51,7 @@ namespace CourierPro
 
         private void btnDepotMngemnt_Click(object sender, EventArgs e)
         {
-            
+            new Depot().Show();
         }
 
         private void btnAccounts_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace CourierPro
 
         private void btnIM_Click(object sender, EventArgs e)
         {
-            
+            new Inventory_Management().Show();
         }
     }
 }

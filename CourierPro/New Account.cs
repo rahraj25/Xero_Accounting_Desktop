@@ -16,5 +16,13 @@ namespace CourierPro
         {
             InitializeComponent();
         }
+
+        private void cb_account_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_account_type.SelectedIndex != -1)
+            {
+                Console.WriteLine("changed value");
+            }
+        }
     }
 }

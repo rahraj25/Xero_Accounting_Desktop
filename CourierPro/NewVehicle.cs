@@ -21,9 +21,9 @@ namespace CourierPro
         void BindVehicle()
         {
 
-            cbVehicleType.DataSource = Enum.GetNames(typeof(Vehicle.vehicleType)).ToList();
+            cb_vehicle_type.DataSource = Enum.GetNames(typeof(Vehicle.vehicleType)).ToList();
             // update the class as vehicle type is selected
-            cbVechileCategory.DataSource = Enum.GetNames(typeof(Vehicle.vehicleCategory)).ToList();
+            cb_vehicle_category.DataSource = Enum.GetNames(typeof(Vehicle.vehicleCategory)).ToList();
 
 
         }
@@ -47,6 +47,22 @@ namespace CourierPro
 
             // update the data base
 
+        }
+
+        private void cb_vehicle_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_vehicle_type.SelectedIndex != -1)
+            {
+                Console.WriteLine("changed value");
+            }
+        }
+
+        private void cb_vehicle_category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_vehicle_type.SelectedIndex != -1)
+            {
+                Console.WriteLine("changed value");
+            }
         }
     }
 }

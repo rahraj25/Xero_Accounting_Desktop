@@ -73,6 +73,7 @@
             this.cb_account_type.Name = "cb_account_type";
             this.cb_account_type.Size = new System.Drawing.Size(121, 21);
             this.cb_account_type.TabIndex = 3;
+            this.cb_account_type.SelectedIndexChanged += new System.EventHandler(this.cb_account_type_SelectedIndexChanged);
             // 
             // label3
             // 

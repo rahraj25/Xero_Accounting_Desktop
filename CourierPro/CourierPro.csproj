@@ -61,11 +61,23 @@
     <Compile Include="Data\Person.cs" />
     <Compile Include="Data\Depot.cs" />
     <Compile Include="Data\Driver.cs" />
+    <Compile Include="Depot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Depot.Designer.cs">
+      <DependentUpon>Depot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory Management.Designer.cs">
+      <DependentUpon>Inventory Management.cs</DependentUpon>
     </Compile>
     <Compile Include="New Account.cs">
       <SubType>Form</SubType>
@@ -103,8 +115,14 @@
     <EmbeddedResource Include="Accounts.resx">
       <DependentUpon>Accounts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Depot.resx">
+      <DependentUpon>Depot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory Management.resx">
+      <DependentUpon>Inventory Management.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New Account.resx">
       <DependentUpon>New Account.cs</DependentUpon>
