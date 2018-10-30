@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.DepotLocations = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnTracking = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnCars = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.DepotLocations = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnIM = new System.Windows.Forms.Button();
             this.btnAccounts = new System.Windows.Forms.Button();
             this.btnDepotMngemnt = new System.Windows.Forms.Button();
@@ -64,32 +64,55 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // label6
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 241);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Depot Management";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(489, 241);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Vehicles";
             // 
-            // label2
+            // btnTracking
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 241);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Accounts";
+            this.btnTracking.BackgroundImage = global::CourierPro.Properties.Resources.map_marker;
+            this.btnTracking.Enabled = false;
+            this.btnTracking.Location = new System.Drawing.Point(320, 278);
+            this.btnTracking.Name = "btnTracking";
+            this.btnTracking.Size = new System.Drawing.Size(124, 113);
+            this.btnTracking.TabIndex = 10;
+            this.btnTracking.UseVisualStyleBackColor = true;
+            this.btnTracking.Click += new System.EventHandler(this.btnTracking_Click);
             // 
-            // label3
+            // label5
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(588, 241);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Inventory Management";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(366, 241);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Tracking";
+            // 
+            // btnCars
+            // 
+            this.btnCars.BackgroundImage = global::CourierPro.Properties.Resources.truck;
+            this.btnCars.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCars.Enabled = false;
+            this.btnCars.Location = new System.Drawing.Point(450, 278);
+            this.btnCars.Name = "btnCars";
+            this.btnCars.Size = new System.Drawing.Size(124, 113);
+            this.btnCars.TabIndex = 8;
+            this.btnCars.UseVisualStyleBackColor = true;
+            this.btnCars.Click += new System.EventHandler(this.btnCars_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(123, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Location";
             // 
             // DepotLocations
             // 
@@ -115,55 +138,32 @@
             this.DepotLocations.SelectedIndexChanged += new System.EventHandler(this.DepotLocationSelected);
             this.DepotLocations.SelectionChangeCommitted += new System.EventHandler(this.DepotLocationSelected);
             // 
-            // label4
+            // label3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(123, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Location";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(588, 241);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Inventory Management";
             // 
-            // label5
+            // label2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(366, 241);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Tracking";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(228, 241);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Accounts";
             // 
-            // label6
+            // label1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(489, 241);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Vehicles";
-            // 
-            // btnTracking
-            // 
-            this.btnTracking.BackgroundImage = global::CourierPro.Properties.Resources.map_marker;
-            this.btnTracking.Enabled = false;
-            this.btnTracking.Location = new System.Drawing.Point(320, 278);
-            this.btnTracking.Name = "btnTracking";
-            this.btnTracking.Size = new System.Drawing.Size(124, 113);
-            this.btnTracking.TabIndex = 10;
-            this.btnTracking.UseVisualStyleBackColor = true;
-            this.btnTracking.Click += new System.EventHandler(this.btnTracking_Click);
-            // 
-            // btnCars
-            // 
-            this.btnCars.BackgroundImage = global::CourierPro.Properties.Resources.truck;
-            this.btnCars.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCars.Enabled = false;
-            this.btnCars.Location = new System.Drawing.Point(450, 278);
-            this.btnCars.Name = "btnCars";
-            this.btnCars.Size = new System.Drawing.Size(124, 113);
-            this.btnCars.TabIndex = 8;
-            this.btnCars.UseVisualStyleBackColor = true;
-            this.btnCars.Click += new System.EventHandler(this.btnCars_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(83, 241);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Depot Management";
             // 
             // btnIM
             // 
@@ -227,11 +227,11 @@
         private System.Windows.Forms.Button btnIM;
         private System.Windows.Forms.Button btnAccounts;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox DepotLocations;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCars;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnTracking;
+        public System.Windows.Forms.ComboBox DepotLocations;
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CourierPro.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,7 @@ namespace CourierPro
         public Form1()
         {
             InitializeComponent();
-            
+
             //test
         }
 
@@ -23,6 +24,7 @@ namespace CourierPro
         {
             if (DepotLocations.SelectedIndex != -1)
             {
+                Instance.Location = ((ComboBox)sender).Text;
                 Console.WriteLine("changed value");
                 ToggleBtns(true);
             }
@@ -41,7 +43,7 @@ namespace CourierPro
 
         private bool checkBtnsAreOkay()
         {
-            if(btnAccounts.Enabled == false)
+            if (btnAccounts.Enabled == false)
             {
                 MessageBox.Show("Error", "Please select a Depot first", MessageBoxButtons.OK);
                 return false;
@@ -51,7 +53,8 @@ namespace CourierPro
 
         private void btnDepotMngemnt_Click(object sender, EventArgs e)
         {
-            
+            Instance._depot = new Depot();
+            Instance._depot.Show();
         }
 
         private void btnAccounts_Click(object sender, EventArgs e)
@@ -74,7 +77,7 @@ namespace CourierPro
 
         private void btnIM_Click(object sender, EventArgs e)
         {
-            
+            new Inventory_Management().Show();
         }
     }
 }

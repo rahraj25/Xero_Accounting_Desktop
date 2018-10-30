@@ -6,27 +6,35 @@ using System.Threading.Tasks;
 
 namespace CourierPro.Data
 {
-    class Depot
+    public class Depot
     {
-        string _location;
-        Driver[] couriers;
-        Vehicle[] vehicles;
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public int Contact { get; set; }
+        public string Location { get; set; }
+        public Driver[] Couriers { get; set; }
+        public Vehicle[] Vehicles { get; set; }
 
+        public Depot()
+        {
+
+        }
 
         public Depot(string location)
         {
-            _location = location;
+            this.Location = location;
         }
 
         public void AssignDrivers()
         {
-            foreach (Vehicle car in vehicles)
+            foreach (var car in Vehicles)
             {
                 if (!car.hasDriver())
                 {
-                    foreach (Driver courier in couriers)
+                    foreach (var courier in Couriers)
                     {
-                        if (courier.car != null && courier.license == car.licence)
+                        if (courier.car != null && courier.license == Enum.GetNames(typeof(Vehicle.vehicleCategory)).ToString())
                         {
                             car.SetDriver(courier);
                             courier.car = car;

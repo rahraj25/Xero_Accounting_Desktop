@@ -20,12 +20,14 @@ namespace CourierPro
 
         void BindVehicle()
         {
-            cbVehicleType.DataSource = Enum.GetNames(typeof(Vehicle.vehicleType)).ToList();
-        }
+            cb_vehicle_type.DataSource = Enum.GetNames(typeof(Vehicle.vehicleType)).ToList();
 
-        private void NewVehicle_Click(object sender, EventArgs e)
-        {
-         
+
+            cb_vehicle_type.DataSource = Enum.GetNames(typeof(Vehicle.vehicleType)).ToList();
+            // update the class as vehicle type is selected
+            cb_vehicle_category.DataSource = Enum.GetNames(typeof(Vehicle.vehicleCategory)).ToList();
+
+
         }
 
         private void txtPurchase_Click(object sender, EventArgs e)
@@ -36,6 +38,33 @@ namespace CourierPro
         private void vehiclePurchaseCal_DateSelected(object sender, DateRangeEventArgs e)
         {
             txtPurchase.Text = vehiclePurchaseCal.SelectionStart.ToString("dd-MM-yyyy");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPurchase.Text) || string.IsNullOrEmpty(txtRego.Text))
+            {
+                MessageBox.Show("All fields should be filled");
+            }
+
+            // update the data base
+
+        }
+
+        private void cb_vehicle_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_vehicle_type.SelectedIndex != -1)
+            {
+                Console.WriteLine("changed value");
+            }
+        }
+
+        private void cb_vehicle_category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_vehicle_type.SelectedIndex != -1)
+            {
+                Console.WriteLine("changed value");
+            }
         }
     }
 }

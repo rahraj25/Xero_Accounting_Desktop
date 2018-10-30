@@ -28,7 +28,7 @@ namespace CourierPro
 
         void LoadContent()
         {
-            var _account = new Account() { AccountNo = 1, Person = new Persons { PersonID = 1, Name = "Test", Email = "Test@xyz.com" } };
+            var _account = new Account() { AccountNo = 1, Person = new Persons { PersonID = 1, FirstName = "Test", LastName = "Last Test" , Email = "Test@xyz.com" } };
             _accounts.Add(_account);
         }
 
@@ -36,8 +36,13 @@ namespace CourierPro
 
         void DataDisplay()
         {
-            dgAccounts.DataSource = _accounts.Select(x => new { Account = x.AccountNo, Type = x.AccountType, AccountHolder = x.Person.Name }).ToList(); 
+            dgAccounts.DataSource = _accounts.Select(x => new { Account = x.AccountNo, Type = x.AccountType, AccountHolder = x.Person.FirstName + x.Person.LastName }).ToList(); 
 
+        }
+
+        private void btn_new_account_Click(object sender, EventArgs e)
+        {
+            new New_Account().Show();
         }
     }
 }

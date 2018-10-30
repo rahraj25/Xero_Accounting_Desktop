@@ -16,5 +16,17 @@ namespace CourierPro
         {
             InitializeComponent();
         }
+
+        private void button_trace_package_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(textBox_enter_package_no.Text))
+            {
+                new Track_Package().Show();
+            }
+            else
+            {
+                MessageBox.Show("Please enter your package no");
+            }     
+        }
     }
 }
