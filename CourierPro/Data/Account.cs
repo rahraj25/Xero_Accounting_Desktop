@@ -8,6 +8,7 @@ namespace CourierPro.Data
 {
     public class Account
     {
+        public Guid Id { get; set; }
         public int AccountNo { get; set; }
         public string AccountType { get; set;}
         public Persons Person { get; set; }

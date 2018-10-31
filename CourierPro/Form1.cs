@@ -59,25 +59,26 @@ namespace CourierPro
 
         private void btnAccounts_Click(object sender, EventArgs e)
         {
-            Accounts accountsForm = new Accounts();
-            accountsForm.Show();
+            Instance._account = new Accounts();
+            Instance._account.Show();
         }
 
         private void btnTracking_Click(object sender, EventArgs e)
         {
-            Tracking trackingForm = new Tracking();
-            trackingForm.Show();
+            new Tracking().ShowDialog(); 
+
         }
 
         private void btnCars_Click(object sender, EventArgs e)
         {
-            vehicles vehicleForm = new vehicles();
-            vehicleForm.Show();
+            Instance._vehicle = new vehicles();
+            Instance._vehicle.ShowDialog();
         }
 
         private void btnIM_Click(object sender, EventArgs e)
         {
-            new Inventory_Management().Show();
+            Instance._inventory = new Inventory_Management();
+            Instance._inventory.ShowDialog();
         }
     }
 }

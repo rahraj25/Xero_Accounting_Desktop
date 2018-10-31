@@ -11,31 +11,48 @@ namespace CourierPro.Entity
     public class Db
     {
         readonly LiteDatabase _db;
-        LiteCollection<Data.Depot> _depots;
-        const string TABLE = "Depots";
-
-        public Db()
+        string table;
+        public Db(DbEnum value)
         {
             _db = new LiteDatabase(@"CourierPro.db");
-            _depots = _db.GetCollection<Data.Depot>(TABLE);
+            table = value.ToString();
         }
 
 
+        #region Depots
         public IEnumerable<Data.Depot> GetAllDepots()
         {
-            return _depots.Find(a=>a.Location== Instance.Location);
+            return _db.GetCollection<Data.Depot>(table)
+                                .Find(a => a.Location == Instance.Location);
         }
-
         public void InsertDepot(Data.Depot depot)
         {
             depot.Location = Instance.Location;
-            _depots.Insert(depot);
+            _db.GetCollection<Data.Depot>(table).Insert(depot);
         }
-
         public void DeleteDepot(Guid value)
         {
-            _depots.Delete(value);
+            _db.GetCollection<Data.Depot>(table).Delete(value);
         }
+        #endregion
+
+
+        #region Accounts
+        public IEnumerable<Data.Account> GetAllAccounts()
+        {
+            return _db.GetCollection<Data.Account>(table).Find(a => a.Location == Instance.Location);
+        }
+        public bool InsertAccount(Data.Account account)
+        {
+            _db.GetCollection<Data.Account>(table).Insert(account);
+            return true;
+        }
+        public void DeleteAccount(Guid value)
+        {
+            _db.GetCollection<Data.Account>(table).Delete(value);
+        }
+
+        #endregion
 
     }
 }

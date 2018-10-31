@@ -78,6 +78,7 @@
       <DependentUpon>Depot.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\Db.cs" />
+    <Compile Include="Entity\DbEnum.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

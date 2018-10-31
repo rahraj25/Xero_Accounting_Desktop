@@ -19,13 +19,32 @@ namespace CourierPro
         public Depot()
         {
             InitializeComponent();
-            _depotEntity = new CourierPro.Entity.Db();
+            InitializeGrid();
+
+
+            _depotEntity = new CourierPro.Entity.Db(DbEnum.Depots);
 
             LoadDepots();
 
             dgDepots.Columns[0].Visible = false;
-            AddButton("Edit");
-            AddButton("Delete");
+
+
+        }
+
+        void InitializeGrid() {
+
+            var colId = new DataGridViewTextBoxColumn { HeaderText = "Id" };
+            var colDepot = new DataGridViewTextBoxColumn { HeaderText = "Depot" };
+            var colAddress = new DataGridViewTextBoxColumn { HeaderText = "Address" };
+            var colContact = new DataGridViewTextBoxColumn { HeaderText = "Contact" };
+
+            var colSave = new DataGridViewButtonColumn { };
+            var colDelete = new DataGridViewButtonColumn { };
+
+           // colDepot.ReadOnly = colAddress.ReadOnly = colContact.ReadOnly = true;
+
+            dgDepots.Columns.AddRange(colId, colDepot, colAddress, colContact, colSave, colDelete);
+
         }
 
         private void AddButton(string Btn)
@@ -37,9 +56,11 @@ namespace CourierPro
             dgDepots.Columns.Add(_btn);
         }
 
-        public void LoadDepots()
+        private void AddRows(IEnumerable<Data.Depot> collection)
         {
-            var _collection = _depotEntity.GetAllDepots().Select(x => new
+            dgDepots.Rows.Clear();
+
+            var _refined = collection.Select(x => new
             {
                 ID = x.Id,
                 Name = x.Name,
@@ -47,7 +68,16 @@ namespace CourierPro
                 Contact = x.Contact
 
             }).ToList();
-            dgDepots.DataSource = _collection;
+
+            foreach (var item in _refined)
+                dgDepots.Rows.Add(item.ID, item.Name, item.Address, item.Contact, "Edit", "Delete");
+
+        }
+
+        public void LoadDepots()
+        {
+            var _collection = _depotEntity.GetAllDepots();
+            AddRows(_collection);
 
         }
 
@@ -63,18 +93,21 @@ namespace CourierPro
 
         private void dgDepots_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Update
-            if (e.ColumnIndex == 0)
+            //Update 
+            //textboxes maybe
+            if (e.ColumnIndex == 4)
             {
                 var _drowCollection = dgDepots.Rows[e.RowIndex];
                 _drowCollection.ReadOnly = false;
-               
+                
+                dgDepots.EditMode = DataGridViewEditMode.EditOnEnter;
+                dgDepots.CurrentRow.ReadOnly = false;
                 dgDepots.BeginEdit(true);
             }
             //Delete
-            else if (e.ColumnIndex == 1)
+            else if (e.ColumnIndex == 5)
             {
-                var _value = (Guid)dgDepots.Rows[e.RowIndex].Cells["ID"].Value;
+                var _value = (Guid)dgDepots.Rows[e.RowIndex].Cells[0].Value;
                 _depotEntity.DeleteDepot(_value);
                 LoadDepots();
             }
@@ -84,6 +117,14 @@ namespace CourierPro
 
         private void dgDepots_UserAddedRow(object sender, DataGridViewRowEventArgs e)
         {
+        }
+
+        private void dgDepots_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgDepots.CurrentRow != null) {
+
+                var test = dgDepots.CurrentRow;
+            }
         }
     }
 }

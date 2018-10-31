@@ -37,6 +37,7 @@
             // 
             this.dgDepots.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgDepots.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDepots.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgDepots.Location = new System.Drawing.Point(37, 38);
             this.dgDepots.Name = "dgDepots";
             this.dgDepots.ReadOnly = true;
@@ -44,6 +45,7 @@
             this.dgDepots.Size = new System.Drawing.Size(959, 412);
             this.dgDepots.TabIndex = 3;
             this.dgDepots.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDepots_CellContentClick);
+            this.dgDepots.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDepots_CellValueChanged);
             this.dgDepots.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgDepots_RowsAdded);
             this.dgDepots.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgDepots_UserAddedRow);
             // 
@@ -61,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 692);
+            this.ClientSize = new System.Drawing.Size(1025, 540);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgDepots);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
