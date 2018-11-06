@@ -8,6 +8,6 @@ namespace CourierPro.Entity
 {
     public enum DbEnum
     {
-        Depots,Accounts,Persons
+        Depots,Accounts,Persons,Vehicles
     }
 }

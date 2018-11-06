@@ -46,9 +46,9 @@ namespace CourierPro
 
             if (EmptyCheck(_firstName) || EmptyCheck(_lastName) || EmptyCheck(_accountID) || EmptyCheck(_accountType) || EmptyCheck(_city) || EmptyCheck(_email))
                 _errormsg = "*Please fill every field";
-            if (!int.TryParse(_accountID, out int a))
+            else if (!int.TryParse(_accountID, out int a))
                 _errormsg = "*Invalid account number";
-            if (!Regex.IsMatch(_email, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
+            else if (!Regex.IsMatch(_email, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
                 _errormsg = "*Invalid email";
 
             if (string.IsNullOrEmpty(_errormsg))

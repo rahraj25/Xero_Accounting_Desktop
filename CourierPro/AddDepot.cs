@@ -31,11 +31,11 @@ namespace CourierPro
             //Validation maybe
             var _errormsg = string.Empty;
 
-            if (!int.TryParse(_contact, out int num))
-                _errormsg = "*Please enter a valid contact";
-            if(string.IsNullOrEmpty(_name))
+            if (string.IsNullOrEmpty(_name))
                 _errormsg = "*Please enter a valid name";
-            if (string.IsNullOrEmpty(_address))
+            else if (!int.TryParse(_contact, out int num))
+                _errormsg = "*Please enter a valid contact";
+            else if (string.IsNullOrEmpty(_address))
                 _errormsg = "*Please enter a valid address";
 
 

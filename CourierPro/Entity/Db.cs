@@ -54,5 +54,21 @@ namespace CourierPro.Entity
 
         #endregion
 
+
+        #region Vehicle
+
+        //All locations
+        public IEnumerable<Data.Vehicle> GetAllVehicles()
+        {
+            return _db.GetCollection<Data.Vehicle>(table).FindAll();
+        }
+
+
+        public void InsertVehicle(Data.Vehicle _vehicle)
+        {
+            _db.GetCollection<Data.Vehicle>(table).Insert(_vehicle);
+        }
+
+        #endregion
     }
 }

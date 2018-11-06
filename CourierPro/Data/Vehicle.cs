@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CourierPro
+namespace CourierPro.Data
 {
     public class Vehicle
     {
+        public Guid Id { get; set; }
         public enum vehicleType { none, car, cycle, moped, motorcycle, van, truck, forklift }
         public enum vehicleCategory { none, class1, class3, class5, class6}
         //public string licence { get; set; }

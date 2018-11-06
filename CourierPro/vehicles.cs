@@ -1,4 +1,5 @@
 ﻿using CourierPro.Data;
+using CourierPro.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,21 +14,30 @@ namespace CourierPro
 {
     public partial class vehicles : Form
     {
+        readonly Db _dbInstance;
         public vehicles()
         {
             InitializeComponent();
-            DataDisplay();
+            _dbInstance = new Db(DbEnum.Vehicles);
+
+            LoadContent();
         }
 
 
-        void DataDisplay()
+
+        public void LoadContent()
         {
+            dgVehicles.DataSource = _dbInstance.GetAllVehicles()
+                                                    .Select(x => new
+                                                    {
+                                                        x.rego,
+                                                        x.type,
+                                                        x.category
 
-            var _dummylist = new List<Vehicle>();
-            _dummylist.Add(new Vehicle() {rego = "CFR101", type = Vehicle.vehicleType.car, category = Vehicle.vehicleCategory.class1});
+                                                    }).ToList();
 
-            dgVehicles.DataSource = _dummylist;
         }
+
 
         private void UpdateVehicle(Vehicle vehicle)
         {
