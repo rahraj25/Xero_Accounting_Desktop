@@ -42,6 +42,12 @@ namespace CourierPro
             var _city = txtCity.Text;
             var _email = txtEmail.Text;
 
+            Save(_firstName, _lastName, _accountID, _accountType, _city, _email);
+        }
+
+
+        public void Save(string _firstName, string _lastName, string _accountID, string _accountType, string _city, string _email)
+        {
             var _errormsg = string.Empty;
 
             if (EmptyCheck(_firstName) || EmptyCheck(_lastName) || EmptyCheck(_accountID) || EmptyCheck(_accountType) || EmptyCheck(_city) || EmptyCheck(_email))
@@ -87,6 +93,7 @@ namespace CourierPro
                 lblError.Visible = true;
             }
         }
+
 
         private void New_Account_Load(object sender, EventArgs e)
         {
