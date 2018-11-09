@@ -46,16 +46,25 @@ namespace CourierPro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DateTime _dpurchaseDate = DateTime.MinValue;
+
             var _purchaseDate = txtPurchase.Text;
 
             var _vehicleType = cb_vehicle_type.Text;
             var _vehicleCategory = cb_vehicle_category.Text;
-            var _regoDate = txtRego.Text;
+            var _rego = txtRego.Text;
 
+            // update the data base
+            MessageBox.Show(Save(_purchaseDate, _vehicleType, _vehicleCategory, _rego));
+            Instance._vehicle.Refresh();
+
+        }
+
+        public string Save(string _purchaseDate, string _vehicleType, string _vehicleCategory, string _rego)
+        {
+            DateTime _dpurchaseDate = DateTime.MinValue;
             var _message = string.Empty;
 
-            if (IsEmpty(_purchaseDate) || IsEmpty(_regoDate) || IsEmpty(_vehicleType) || IsEmpty(_vehicleCategory))
+            if (IsEmpty(_purchaseDate) || IsEmpty(_rego) || IsEmpty(_vehicleType) || IsEmpty(_vehicleCategory))
                 _message = "All fields should be filled";
 
             else if (!DateTime.TryParseExact(_purchaseDate, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out _dpurchaseDate))
@@ -63,20 +72,19 @@ namespace CourierPro
 
             else
             {
+
                 _vehicleEntity.InsertVehicle(new Vehicle()
                 {
-                    rego = _regoDate,
+                    rego = _rego,
                     dateOfPurchas = _dpurchaseDate,
                     category = (vehicleCategory)Enum.Parse(typeof(vehicleCategory), _vehicleCategory),
                     type = (vehicleType)Enum.Parse(typeof(vehicleType), _vehicleType)
                 });
                 _message = "Inserted successfully";
 
-                Instance._vehicle.Refresh();
-
+             
             }
-            // update the data base
-            MessageBox.Show(_message);
+            return _message;
         }
 
         private void cb_vehicle_type_SelectedIndexChanged(object sender, EventArgs e)

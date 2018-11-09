@@ -22,32 +22,14 @@ namespace CourierPro
         {
             lblError.Visible = false;
 
-            var _depotEntity = new CourierPro.Entity.Db(Entity.DbEnum.Depots);
+
 
             var _name = txtdepotName.Text;
             var _contact = txtdepotContact.Text;
             var _address = txtdepotAddress.Text;
 
-            //Validation maybe
-            var _errormsg = string.Empty;
-
-            if (string.IsNullOrEmpty(_name))
-                _errormsg = "*Please enter a valid name";
-            else if (!int.TryParse(_contact, out int num))
-                _errormsg = "*Please enter a valid contact";
-            else if (string.IsNullOrEmpty(_address))
-                _errormsg = "*Please enter a valid address";
-
-
-            if (string.IsNullOrEmpty(_errormsg))
+            if (Save(_name, _contact, _address))
             {
-                _depotEntity.InsertDepot(new Data.Depot()
-                {
-                    Name = _name,
-                    Contact = int.Parse(_contact),
-                    Address = _address
-                });
-
                 var _result = MessageBox.Show("Inserted successfully!", "Alert", MessageBoxButtons.OK);
 
                 if (_result == DialogResult.OK)
@@ -59,6 +41,36 @@ namespace CourierPro
                     Instance._depot.Refresh();
 
                 }
+
+
+            }
+
+        }
+
+        public bool Save(string _name, string _contact, string _address)
+        {
+            var _return = false;
+            var _errormsg = string.Empty;
+            var _depotEntity = new CourierPro.Entity.Db(Entity.DbEnum.Depots);
+
+            if (string.IsNullOrEmpty(_name))
+                _errormsg = "*Please enter a valid name";
+            else if (!int.TryParse(_contact, out int num))
+                _errormsg = "*Please enter a valid contact";
+            else if (string.IsNullOrEmpty(_address))
+                _errormsg = "*Please enter a valid address";
+
+
+            if (string.IsNullOrEmpty(_errormsg))
+            {
+                _return = _depotEntity.InsertDepot(new Data.Depot()
+                {
+                    Name = _name,
+                    Contact = int.Parse(_contact),
+                    Address = _address
+                });
+
+
             }
 
             else
@@ -66,7 +78,10 @@ namespace CourierPro
                 lblError.Text = _errormsg;
                 lblError.Visible = true;
             }
+
+            return _return;
         }
+
 
         private void ClearValues()
         {

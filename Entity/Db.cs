@@ -25,10 +25,11 @@ namespace CourierPro.Entity
             return _db.GetCollection<Data.Depot>(table)
                                 .Find(a => a.Location == Instance.Location);
         }
-        public void InsertDepot(Data.Depot depot)
+        public bool InsertDepot(Data.Depot depot)
         {
             depot.Location = Instance.Location;
-            _db.GetCollection<Data.Depot>(table).Insert(depot);
+            return _db.GetCollection<Data.Depot>(table).Insert(depot).AsBoolean;
+
         }
         public void DeleteDepot(Guid value)
         {
